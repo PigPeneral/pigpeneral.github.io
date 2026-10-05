@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="assets/css/index.css">
+</head>
+<body>
+<!--讓navbar漂浮在右側-->
+<nav class="navbar">
+    <ul>
+        <li>
+            <a href="#Top">Top</a>
+        </li>
+        <li>
+            <a href="#main">Main</a>
+        </li>
+        <li>
+            <a href="#bottom">Bottom</a>
+        </li>
+    </ul>
+</nav>
+<!--一樣是100% hero 預計帶有下滑引導和按鈕互動-->
+<!--
+    HeroWorld 現在是直向堆疊兩塊：hw-letter-row（字母）在上，button-area 在下。
+    多包 hw-letter-row 這層是為了讓字母維持橫向排列，同時整體能跟 button-area 上下分開
+-->
+<div class="HeroWorld" id="Top">
+    <div class="hw-letter-row">
+        <span class="hw-letter" data-letter="h">H</span>
+        <span class="hw-letter" data-letter="e">e</span>
+        <span class="hw-letter" data-letter="l1">l</span>
+        <span class="hw-letter" data-letter="l2">l</span>
+        <span class="hw-letter" data-letter="o1">o</span>
+        <span class="hw-letter" data-letter="comma">,</span>
+        <span class="hw-letter" data-letter="w">W</span>
+        <span class="hw-letter" data-letter="o2">o</span>
+        <span class="hw-letter" data-letter="r">r</span>
+        <span class="hw-letter" data-letter="l3">l</span>
+        <span class="hw-letter" data-letter="d">d</span>
+        <span class="hw-letter" data-letter="excl">!</span>
+    </div>
+    <div class="button-area">
+        <button id="countButton">
+            useCount / Reset
+        </button>
+        <span id="countDisplay">0</span>
+    </div>
+</div>
+<!--限制高度使跳轉時不會漏出nav-->
+<main id="main">
+    <!--讓border在padding裡而不是main導致壓邊-->
+    <div class="border-box">
+        <div class="message-box">
+            <h1>內部連結</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci atque delectus est et
+                exercitationem incidunt ipsa labore maxime modi nesciunt praesentium quasi quos reprehenderit
+                suscipit tempore, ut voluptates voluptatibus.</p>
+        </div>
+    </div>
+    <div class="border-box">
+        <div class="message-box">
+            <h1>專案</h1>
+            <p>
+                <a href="./urls/Orion/">Orion</a> —— 一個關於「你的瀏覽器正在告訴這個網頁什麼」的中文教育性網站。
+            </p>
+        </div>
+    </div>
+</main>
+<footer id="bottom">
+    <p>something about GitHub</p>
+</footer>
+<script src="./assets/js/hw.js"></script>
+</body>
+</html>

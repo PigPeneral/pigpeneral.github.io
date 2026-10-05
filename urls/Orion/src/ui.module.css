@@ -1,0 +1,137 @@
+:root {
+	--bg-deep: #0a0e1a;
+	--bg-panel: #0f1526;
+	--accent-cyan: #5ad7e8;
+	--accent-cyan-dim: rgba(90, 215, 232, 0.15);
+	--text-main: #e8edf5;
+	--text-dim: #8e9bb3;
+	--border-soft: rgba(90, 215, 232, 0.12);
+}
+
+.glass {
+	background: var(--bg-panel);
+	border: 1px solid var(--border-soft);
+	border-radius: 12px;
+	padding: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.tableHeader {
+	margin-bottom: 1rem;
+}
+
+.tableTitle {
+	font-size: 1.1rem;
+	margin: 0;
+	color: var(--accent-cyan);
+	letter-spacing: 0.02em;
+}
+
+.tableSubtitle {
+	font-size: 0.85rem;
+	color: var(--text-dim);
+	margin: 0.25rem 0 0;
+}
+
+/* 單欄瀑布流:用 columns 讓每欄高度各自獨立,
+   避免內容長度差異大時互相擠壓 */
+.grid {
+	columns: 1;
+	column-gap: 1rem;
+}
+
+@media (min-width: 640px) {
+	.grid {
+		columns: 2;
+	}
+}
+
+@media (min-width: 1024px) {
+	.grid {
+		columns: 3;
+	}
+}
+
+.cell {
+	break-inside: avoid;
+	margin-bottom: 1rem;
+	padding: 0.85rem 1rem;
+	border-radius: 8px;
+	background: rgba(90, 215, 232, 0.04);
+	border: 1px solid transparent;
+	transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.cell:hover {
+	border-color: var(--border-soft);
+	background: var(--accent-cyan-dim);
+}
+
+.cellLabel {
+	font-size: 0.78rem;
+	color: var(--text-dim);
+	margin-bottom: 0.3rem;
+}
+
+.cellValue {
+	font-size: 0.95rem;
+	color: var(--text-main);
+	word-break: break-all;
+	line-height: 1.5;
+}
+
+.hoverable {
+	border-bottom: 1px dotted var(--accent-cyan);
+	cursor: help;
+	color: var(--text-main);
+}
+
+.tooltipWrapper {
+	position: relative;
+	display: inline-block;
+}
+
+.tooltipBox {
+	position: absolute;
+	bottom: 125%;
+	left: 0;
+	z-index: 10;
+	width: 240px;
+	padding: 0.6rem 0.85rem;
+	background: var(--bg-deep);
+	border: 1px solid var(--accent-cyan);
+	color: var(--text-main);
+	font-size: 0.8rem;
+	line-height: 1.5;
+	border-radius: 6px;
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.filterBar {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.filterChip {
+	padding: 0.4rem 0.9rem;
+	border-radius: 999px;
+	border: 1px solid var(--border-soft);
+	background: transparent;
+	color: var(--text-dim);
+	font-size: 0.85rem;
+	cursor: pointer;
+	transition: all 0.15s ease;
+}
+
+.filterChip:hover {
+	border-color: var(--accent-cyan);
+	color: var(--text-main);
+}
+
+.filterChipActive {
+	background: var(--accent-cyan-dim);
+	color: var(--accent-cyan);
+	border-color: var(--accent-cyan);
+}
